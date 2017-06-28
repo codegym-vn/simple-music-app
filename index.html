@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="musicApp">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeGym Simple Music App Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" type="text/javascript"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="musicCtrl">
+    <h2>Currently playing: {{selectedSong.title}}</h2>
+    <audio controls id="player">
+        <source src="{{selectedSong.url}}" type="audio/mpeg"></audio>
+    </audio>
+    <ul>
+        <li ng-repeat="song in songs" ng-click="select(song)">
+            {{song.title}}
+        </li>
+    </ul>
+</body>
+</html>
